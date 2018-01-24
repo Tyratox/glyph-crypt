@@ -1,0 +1,21 @@
+{
+	"name": "glyph-crypt",
+	"version": "1.0.0",
+	"description": "Combines stegnography and encryption with homoglyphs",
+	"main": "index.js",
+	"repository": "https://github.com/Tyratox/glyph-crypt",
+	"author": "Tyratox (Nico Hauser)",
+	"license": "MIT",
+	"scripts": {
+		"test-encode":
+			"node index.js encode test/text.txt test/message.svg test/encoded.txt resources/twitter.txt",
+		"test-decode":
+			"node index.js decode test/encoded.txt resources/twitter.txt test/decoded.svg"
+	},
+	"dependencies": {
+		"prettier": "^1.10.2"
+	},
+	"devDependencies": {
+		"eslint": "^4.16.0"
+	}
+}
