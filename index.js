@@ -49,14 +49,16 @@ const encodeBits = (char, bits, homoglyphSet = []) => {
 	}
 
 	const bitCount = Math.floor(Math.log2(homoglyphs.length));
+	let encodedBits = bits
+		.slice(0, bitCount)
+		.map(bool => (bool ? "1" : "0"))
+		.join("");
 
-	const offset = parseInt(
-		bits
-			.slice(0, bitCount)
-			.map(bool => (bool ? "1" : "0"))
-			.join(""),
-		2
-	);
+	if (bitCount > encodedBits.length) {
+		encodedBits = encodedBits.padEnd(bitCount, "0");
+		//these additional zeroes are padded right so they will be removed during decoding
+	}
+	const offset = parseInt(encodedBits, 2);
 
 	console.log(
 		"Found",
@@ -69,10 +71,7 @@ const encodeBits = (char, bits, homoglyphSet = []) => {
 		"We're using offset",
 		offset,
 		"(",
-		bits
-			.slice(0, bitCount)
-			.map(bool => (bool ? "1" : "0"))
-			.join(""),
+		encodedBits,
 		")",
 		"=>",
 		homoglyphs[offset]
@@ -95,6 +94,7 @@ const decodeBits = (char, homoglyphSet) => {
 
 	if (offset !== 0) {
 		console.log(
+			"Found",
 			homoglyphs.length,
 			"homoglypes or",
 			bitCount,
