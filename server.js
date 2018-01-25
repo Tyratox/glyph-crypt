@@ -4,7 +4,8 @@ const { encode, decode } = require("./lib");
 const express = require("express");
 const bodyParser = require("body-parser");
 
-const [charPath, port = 80, verbose = false] = process.argv.slice(2);
+const [charPath, verbose = false] = process.argv.slice(2);
+const port = process.env.PORT || 8080;
 
 const app = express();
 
