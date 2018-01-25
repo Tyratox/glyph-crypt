@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>glyph-crypt</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	 crossorigin="anonymous">
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	 crossorigin="anonymous"></script>
+	<script type="text/javascript" src="/script.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<section>
+			<form id="encode">
+				<h1>Encode</h1>
+				<div class="row">
+					<div class="col-12 col-md-6">
+						<div class="form-group">
+							<label for="encode-message">Message</label>
+							<textarea id="encode-message" class="form-control" placeholder="The message you want to encode" rows="3"></textarea>
+							<input id="encode-file" class="my-2" type="file" />
+						</div>
+						<div class="form-group">
+							<label for="encode-text">Text</label>
+							<textarea id="encode-text" class="form-control" placeholder="The text to encode the message in" rows="9"></textarea>
+						</div>
+						<input class="btn btn-primary" type="submit" value="Encode" />
+					</div>
+					<div class="col-12 col-md-6">
+						<div class="form-group">
+							<label for="encode-result">Result</label>
+							<textarea id="encode-result" class="form-control" readonly rows="9"></textarea>
+						</div>
+					</div>
+				</div>
+			</form>
+		</section>
+		<section class="my-5">
+			<form id="decode">
+				<h1>Decode</h1>
+				<div class="row">
+					<div class="col-12 col-md-6">
+						<div class="form-group">
+							<label for="decode-message">Nachricht</label>
+							<textarea id="decode-message" class="form-control" placeholder="The message you want to decode" rows="9"></textarea>
+						</div>
+						<input class="btn btn-primary" type="submit" value="Decode" />
+					</div>
+					<div class="col-12 col-md-6">
+						<div class="form-group">
+							<label for="decode-result">Result</label>
+							<textarea id="decode-result" class="form-control" readonly rows="9"></textarea>
+							<a id="decode-download" href="" class="btn btn-primary my-3">Download</a>
+						</div>
+					</div>
+				</div>
+			</form>
+		</section>
+	</div>
+</body>
+
+</html>
